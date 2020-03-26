@@ -8,6 +8,7 @@ class App extends React.Component {
     return (
       <main>
       <Header />
+      <NewChirp />
       <Timeline />
       </main>
     )
