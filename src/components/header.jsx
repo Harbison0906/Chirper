@@ -1,8 +1,8 @@
 import React from 'react';
 import origamiBird from '../assets/origami-bird.png';
 
-class Header extends React.Component {
-  render() {
+const Header = () => {
+  
     return (
       <main>
         <div className="jumbotron jumbotron-fluid header py-3">
@@ -14,11 +14,7 @@ class Header extends React.Component {
           <br />
         </div>
       </main>
-
-
-
     )
-  }
 }
 
 export default Header;

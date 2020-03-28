@@ -9,3 +9,13 @@
   height: 60px;
   width: 60px;
 }
+
+hr {
+  margin: 20px;
+}
+
+.logInButton {
+  color: #EEF7FD;
+  outline-color: #141B41;
+  background-color: #86898C;
+}
