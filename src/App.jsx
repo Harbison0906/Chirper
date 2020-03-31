@@ -14,14 +14,16 @@ class App extends React.Component {
 
   }
 
+  // allows state.value to change to whatever is typed in the textarea
   handleChange = (event) => {
     this.setState({ value: event.target.value });
   }
 
+  // makes copy of state.chirps array and adds new chirp to front of the array
   addChirp = (event) => {
     event.preventDefault();
     const newChirp = this.state.chirps.slice()
-    newChirp.push(this.state.value);
+    newChirp.unshift(this.state.value);
     this.setState({ value: '', chirps: newChirp });
   }
 
@@ -55,7 +57,7 @@ class App extends React.Component {
                       />
                       <button
                         className="btn"
-                        onClick={this.addChirp}
+                        onClick={this.addChirp}  //adds new chirp when "Chirp" is clicked
                       >Chirp</button>
                     </form>
                   </div>
@@ -69,13 +71,14 @@ class App extends React.Component {
           <main className="container">
             <section className="row justify-content-center">
               <>
+              {/* modifies and styles each new chirp */}
                 {this.state.chirps.map(chirp => {
                   return (
-                    <div className="col-md-7">
+                    <div className="col-md-7">   
                       <div className="card">
                         <div className="card-body">
                           <h5 className="card-title">{this.state.user}</h5>
-                          <p className="card-text">{this.state.chirps}</p>
+                          <p className="card-text">{chirp}</p>
                         </div>
                       </div>
                     </div>
@@ -86,7 +89,7 @@ class App extends React.Component {
                 <div className="card">
                   <div className="card-body">
                     <h5 className="card-title">{this.state.user}</h5>
-                    <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum assumenda officia necessitatibus tempore nemo voluptatibus similique rem molestias incidunt quia itaque exercitationem dolor laborum explicabo nostrum, qui repudiandae natus. Necessitatibus.</p>
+                    <p className="card-text">This coronavirus, tho <br /> #quarantine </p>
                   </div>
                 </div>
               </div>
@@ -94,7 +97,7 @@ class App extends React.Component {
                 <div className="card">
                   <div className="card-body">
                     <h5 className="card-title">{this.state.user}</h5>
-                    <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum assumenda officia necessitatibus tempore nemo voluptatibus similique rem molestias incidunt quia itaque exercitationem dolor laborum explicabo nostrum, qui repudiandae natus. Necessitatibus.</p>
+                    <p className="card-text">Tiger King on Netflix....geeeez <br /> #JoeExotic #ISawATiger</p>
                   </div>
                 </div>
               </div>
